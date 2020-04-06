@@ -9,14 +9,16 @@ num_workers = 3
 num_controllers = 3
 cert_dir = 'certs'
 kubeconfig_dir = 'kubeconfig'
+encryption_dir = 'encryption'
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
 
 def main():
-    # delete_compute_instances()
-    # delete_pems()
+    delete_compute_instances()
+    delete_pems()
     delete_kubeconfigs()
+    delete_encryption_data()
 
 
 def delete_compute_instances():
@@ -45,6 +47,10 @@ def delete_kubeconfigs():
     kubeconfigs = glob.glob(f'{base_dir}/{kubeconfig_dir}/*.kubeconfig')
     print(f'deleting {len(kubeconfigs)} kubeconfig files')
     run_cmd(['rm'] + kubeconfigs)
+
+
+def delete_encryption_data():
+    run_cmd(['rm', f'{encryption_dir}/encryption-config.yaml'])
 
 
 if __name__ == '__main__':

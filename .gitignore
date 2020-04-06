@@ -134,3 +134,4 @@ dmypy.json
 worker-*-csr.json
 *.kubeconfig
 auth.json
+encryption-config.yaml
