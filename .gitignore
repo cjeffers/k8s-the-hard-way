@@ -132,3 +132,5 @@ dmypy.json
 *.pem
 *.csr
 worker-*-csr.json
+*.kubeconfig
+auth.json

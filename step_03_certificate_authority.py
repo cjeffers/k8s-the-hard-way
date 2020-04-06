@@ -4,13 +4,12 @@ import glob
 import os
 import subprocess
 
-cert_dir = 'certs'
 num_workers = 3
 num_controllers = 3
 
 
 def main():
-    set_cwd()
+    set_cwd('certs')
     init_ca()
     make_client_server_certs()
     make_client_cert('service-account')
@@ -18,9 +17,9 @@ def main():
     distribute_certs()
 
 
-def set_cwd():
+def set_cwd(dir):
     base_dir = os.path.dirname(os.path.realpath(__file__))
-    full_dir = f'{base_dir}/{cert_dir}'
+    full_dir = f'{base_dir}/{dir}'
     os.chdir(full_dir)
 
 
