@@ -132,3 +132,4 @@ dmypy.json
 *.pem
 *.csr
 worker-*-csr.json
+auth.json

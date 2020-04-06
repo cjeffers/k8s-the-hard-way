@@ -1,0 +1,7 @@
+plugin: gcp_compute
+projects:
+- cwj-k8s-hard-way
+zones:
+- us-west1-a
+auth_kind: serviceaccount
+service_account_file: /home/cwj/repos/k8s-the-hard-way/ansible/auth.json
