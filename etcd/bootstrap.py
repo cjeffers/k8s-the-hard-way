@@ -40,7 +40,7 @@ def configure_etcd():
     internal_ip = get_internal_ip()
     etcd_name = get_output(['hostname', '-s'])
     write_etcd_service(etcd_name, internal_ip)
-    run_cmd(['sudo', 'mv', 'etcd.service', '/etc/systemd/system/'])
+    run_cmd(['sudo', 'cp', 'etcd.service', '/etc/systemd/system/'])
 
 
 def get_internal_ip():
